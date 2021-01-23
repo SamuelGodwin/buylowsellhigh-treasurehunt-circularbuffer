@@ -11,7 +11,6 @@ int main() {
     vector<int> prices{28, 18, 20, 26, 24};
     
     
-    // NB this next line won't compile until you've implemented bestBuySellTime
     Trade trade = bestBuySellTime(prices);
     
     int retval = 0;
