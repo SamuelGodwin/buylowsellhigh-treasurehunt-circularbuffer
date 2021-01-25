@@ -1,14 +1,12 @@
 # Basic building blocks of C++
 
-For this assignment you will code using some of the basic building blocks of C++: vectors, functions, and classes.
+Code using some of the basic building blocks of C++: vectors, functions, and classes.
 
-Where you are to write functions, ensure you use constness and references where appropriate, to avoid needlessly copying objects, and to help ensure you have written correct code.
-
-Note this coursework has a split deadline: an earlier deadline for "buy low, sell high" and "treasure hunt"; and a later deadline for "circular buffer".
+Ensure you use constness and references where appropriate in functions to avoid needlessly copying objects, and to help ensure you have written correct code.
 
 ## The PEP vector class -- technical note
 
-To ensure you are using `vector` correctly, for this work you will be using a version specially adapted for this assignment.  It is used by all the skeleton code provided, and involves writing:
+To ensure I am using `vector` correctly, for this work I will be using a version specially adapted for this assignment.  It is used by all the skeleton code provided, and involves writing:
 
 `#include "vector.h"`  
 `using pep::vector;`  
@@ -18,10 +16,9 @@ To ensure you are using `vector` correctly, for this work you will be using a ve
 `#include <vector>`  
 `using std::vector;`  
 
-This should not affect your solution, but note that outwith this assignment you should use the regular std vector implementation where appropriate.
+Outwith this assignment you should use the regular std vector implementation where appropriate.
 
-
-# Buy low, sell high [4 marks]
+# Buy low, sell high
 
 The price of a given commodity, can be represented by a vector of prices.  For instance:
 
@@ -31,7 +28,7 @@ To maximise profit, we would want to buy low and sell high -- in this case, buy 
 
 In `Trade.h` implement a function `bestBuySellTime` that takes a vector of prices and returns a `Trade' object with the buy and sell time that maximises profit.  This function does not live inside any class -- it is to be defined as a global function.
 
-To perform some basic testing on your code, once you have implemented the function (or at least declared it) `TestTrade.cpp` defines a simple test harness.  To compile this, run:
+To perform some basic testing on the code, once you have implemented the function (or at least declared it) `TestTrade.cpp` defines a simple test harness.  To compile this, run:
 
 `g++ -std=c++11 -o TestTrade TestTrade.cpp`  
 
@@ -39,13 +36,11 @@ If it compiles, you can then run:
 
 `./TestTrade`  
 
-If you push your code to your GitHub repository, it will be ran against some additional test cases, and you'll be emailed the results of these.
+A wider range of test cases will be used, including input vectors that contains millions of numbers -- my code should be able to handle these with modest resources (10 seconds of CPU on a desktop machine, and 0.5GB of RAM).  
 
-When your work is marked, a wider range of test cases will be used, including input vectors that contains millions of numbers -- your code should be able to handle these with modest resources (10 seconds of CPU on a desktop machine, and 0.5GB of RAM).  
+# Treasure hunt
 
-# Treasure hunt [3 marks]
-
-For this piece of coursework, you will write code to work with data about items that are placed at different places on a map, each of which is available for just 15 minutes starting at a certain number of seconds past the hour.
+Code to work with data about items that are placed at different places on a map, each of which is available for just 15 minutes starting at a certain number of seconds past the hour.
 
 Items are described by four properties:
 
@@ -71,7 +66,7 @@ Implement an `operator<<` function for printing out Item objects, so that the fo
 
 `{51.5115, -0.116, "StrandCampus", 600}`  
 
-Once you have done this, create a class function `distanceTo` that will take another Item, and return the distance to it in metres.  To compute this distance, use the [Haversine Formula](http://andrew.hedges.name/experiments/haversine/), which can be implemented using the following pseudo-code:
+A class function `distanceTo` that will take another Item, and return the distance to it in metres.  To compute this distance, use the [Haversine Formula](http://andrew.hedges.name/experiments/haversine/), which can be implemented using the following pseudo-code:
 
 `dlon = lon2 - lon1`  
 `dlat = lat2 - lat1`  
@@ -79,16 +74,14 @@ Once you have done this, create a class function `distanceTo` that will take ano
 `c = 2 * atan2( sqrt(a), sqrt(1-a) )`  
 `distance = R * c (where R is the radius of the Earth)`  
 
-Note that this pseudo-code assumes the latitude and longitude are in *radians*, whereas your class stores them in degrees, so you will need to convert them to radians first.  `cos`, `sin` and the other trignometric functions can be obtained by putting `#include <cmath>` at the top of Item.h.  You should assume `R`, the radius of the earth in metres, is 6373000.
+Note that this pseudo-code assumes the latitude and longitude are in *radians*, whereas my class stores them in degrees, so I need to convert them to radians first.  `cos`, `sin` and the other trignometric functions can be obtained by putting `#include <cmath>` at the top of Item.h.  I assume `R`, the radius of the earth in metres, is 6373000.
 
-To test your code, you can use ItemTest.cpp.  To compile to an executable `ItemTest`, run:
+To test code, you can use ItemTest.cpp.  To compile to an executable `ItemTest`, run:
 
 `g++ -std=c++11 -o ItemTest ItemTest.cpp`  
 
-Note that this will only work once you have implemented the constructor and functions discussed above.
 
-
-# A circular buffer [3 marks]
+# A circular buffer
 
 This is the advanced part of this assignment -- note it has a later deadline than the earlier parts.
 
