@@ -1,5 +1,3 @@
-# Foobar
-
 A system that returns a Trade object with the buy and sell time that maximises profit for a vector of prices. Also, code to work with data about items that are placed at different places on a map, each of which is available for just 15 minutes. Returns distances to these items using the Haversine Formula. Finally, some code completing the CircularBuffer class. 70. PEP 1.
 
 # Buy low, sell high
