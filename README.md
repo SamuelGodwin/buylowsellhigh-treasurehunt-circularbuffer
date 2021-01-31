@@ -95,6 +95,6 @@ It has the functions:
 
 ## Usage
 
-In the file`CircularBuffer.h` is a definition of the CircularBuffer class. The implementation is based on a vector of characters.
+In the file `CircularBuffer.h` is a definition of the CircularBuffer class. The implementation is based on a vector of characters.
 
 To test this code, you can compile and run `TestCircularBuffer.cpp`.
