@@ -1,5 +1,7 @@
 # Buy low, sell high
 
+![](./TestTrade.gif)
+
 Run TestTrade.cpp.
 
 e.g. g++ -std=c++11 -o TestTrade TestTrade.cpp, then ./TestTrade (Unix) or TestTrade (Windows).
